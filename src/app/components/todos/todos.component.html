@@ -1,0 +1,42 @@
+<div class="container">
+  <h1 class="mt-5">Realizar la consigna debajo de este mensaje</h1>
+</div>
+
+<!-- Html faltante -->
+<div style="margin-left: 30px;">
+<div class="field">
+  <h2>Todo's</h2>
+</div>
+
+<div class="mb-3">
+  <input type="input" style="margin: 10px;" [(ngModel)]="this.search"> <button *ngIf="this.search != ''" class="btn btn-primary" (click)="_search()">Search</button>
+</div>
+
+<div class="field">
+  <div *ngIf="this.todos.length == 0 && this.notification != '' && this.search != ''">
+    <span style="padding: 10px!important;" >{{this.notification}}</span>
+  </div>
+</div>
+<table class="table" *ngIf="this.todos.length != 0 && this.search != ''">
+  <thead>
+    <tr>
+      <th>UserId</th>
+      <th>Id</th>
+      <th>Title</th>
+      <th>Completed</th>
+      <th>View</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let todo of todos">
+      <td>{{ todo.userId }}</td>
+      <td>{{ todo.id }}</td>
+      <td>{{ todo.title }}</td>
+      <td>{{ todo.completed }}</td>
+      <td>
+        <button class="btn btn-secondary" routerLink="/todos/{{todo.id}}">Ver detalle</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>

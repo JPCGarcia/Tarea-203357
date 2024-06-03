@@ -1,0 +1,25 @@
+<div class="form" style="margin-top: 60px; margin-left: 30px;">
+  <div class="field">
+    <h2>Todo</h2>
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">User id</label>
+      <input class="form-control" type="text" readonly [(ngModel)]="this.todo.userId">
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Todo id</label>
+      <input class="form-control" type="text" readonly [(ngModel)]="this.todo.id">
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Title</label>
+      <input class="form-control" type="text" readonly [(ngModel)]="this.todo.title">
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Completed</label>
+      <input class="form-control" type="text" readonly [(ngModel)]="this.todo.completed">
+  </div>
+</div>
